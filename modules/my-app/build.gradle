@@ -1,18 +1,18 @@
 packageRunBuild.enabled=false;
 
-build{
-    dependsOn(packageRunBuildLiferay)
-}
+build.dependsOn(packageRunBuildLiferay)
 
-task copyJarToDocker(type: Copy) {
-	print "${rootProject.buildDir}"
-    copy {
-        from 'build.liferay/'
-		include '*.jar'
-        into "${rootProject.buildDir}/docker/deploy"
-    }
+packageRunBuildLiferay{
+
+	doLast{
+		copy {
+			from 'build.liferay/'
+			include '*.jar'
+			into "${rootProject.buildDir}/docker/deploy"
+		}
+	}
+
 }
-dockerDeploy.finalizedBy copyJarToDocker
 
 
 
