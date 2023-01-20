@@ -1,5 +1,5 @@
 # Any instructions here will be appended to the end of the Dockerfile created by `createDockerfile`.
 EXPOSE 80
 #RUN chmod -R 777 /opt/liferay
-ENV AWS_ACCESS_KEY=AKIAROW2I57ALP4C7L76
-ENV AWS_SECRET_KEY=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
+ENV AWS_ACCESS_KEY=
+ENV AWS_SECRET_KEY=
